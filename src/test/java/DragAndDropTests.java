@@ -21,6 +21,9 @@ public class DragAndDropTests {
 
         open("/drag_and_drop");
 
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
+
         actions().moveToElement($("#column-a")).clickAndHold().moveToElement($("#column-b")).release().perform();
 
         $("#column-a").shouldNotHave(text("A"));
@@ -32,6 +35,9 @@ public class DragAndDropTests {
     public void DragAndDropElementsTest() {
 
         open("/drag_and_drop");
+
+        $("#column-a").shouldHave(text("A"));
+        $("#column-b").shouldHave(text("B"));
 
         $("#column-a").dragAndDrop(DragAndDropOptions.to($("#column-b")));
 
